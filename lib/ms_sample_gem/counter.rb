@@ -1,13 +1,19 @@
 class Counter
   def value_for(number)
-    if is_dividable_through_5?(number) || has_5_as_cifer?(number)
+    if is_dividable_through_3?(number)
       'fizz'
+    elsif is_dividable_through_5?(number) || has_5_as_cifer?(number)
+      'buzz'
     else
       number
     end
   end
 
   private
+
+  def is_dividable_through_3?(number)
+    number % 3 == 0
+  end
 
   def is_dividable_through_5?(number)
     number % 5 == 0
