@@ -13,7 +13,7 @@ RSpec.describe Counter do
   end
 
   it 'returns buzz for a number not dividable through 5 but with a 5 as cifer' do
-    expect(counter.value_for(53)).to eq 'buzz'
+    expect(counter.value_for(56)).to eq 'buzz'
   end
 
   it 'returns fizz for 3' do
@@ -22,5 +22,9 @@ RSpec.describe Counter do
 
   it 'returns fizz for a number divisable through 3' do
     expect(counter.value_for(9)).to eq 'fizz'
+  end
+
+  it 'returns fizz for a number not dividable by 3 but containing a 3 as cifer' do
+    expect(counter.value_for(31)).to eq 'fizz'
   end
 end

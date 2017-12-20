@@ -1,6 +1,6 @@
 class Counter
   def value_for(number)
-    if is_dividable_through_3?(number)
+    if is_dividable_through_3?(number) || has_3_as_cifer?(number)
       'fizz'
     elsif is_dividable_through_5?(number) || has_5_as_cifer?(number)
       'buzz'
@@ -17,6 +17,10 @@ class Counter
 
   def is_dividable_through_5?(number)
     number % 5 == 0
+  end
+
+  def has_3_as_cifer?(number)
+    number.to_s.chars.include?('3')
   end
 
   def has_5_as_cifer?(number)
