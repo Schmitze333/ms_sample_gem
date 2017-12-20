@@ -1,8 +1,6 @@
 # MsSampleGem
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ms_sample_gem`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is a tryout to get to know the structure of a gem.
 
 ## Installation
 
@@ -22,7 +20,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This is just a tryout to get to know the overall gem structure. __You can hardly
+do anything with this gem!__
 
 ## Development
 
@@ -32,4 +31,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ms_sample_gem.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Schmitze333/ms_sample_gem.
