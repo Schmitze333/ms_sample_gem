@@ -1,29 +1,44 @@
 class Counter
+  attr_reader :replacers
+
+  def initialize(args = {})
+    @replacers = []
+    args.sort_by { |k, v| v }.each do |word, number|
+      @replacers << Replacer.new(number: number.to_i, word: word.to_s)
+    end
+  end
+
   def value_for(number)
-    if is_dividable_through_3?(number) || has_3_as_cifer?(number)
-      'fizz'
-    elsif is_dividable_through_5?(number) || has_5_as_cifer?(number)
-      'buzz'
+    value = ''
+    replacers.each do |replacer|
+      value << replacer.replace(number)
+    end
+    value << number.to_s if value.empty?
+    value
+  end
+end
+
+class Replacer
+  def initialize(args)
+    @number = args[:number]
+    @word = args[:word]
+  end
+
+  def replace(number)
+    if is_dividable?(number) || has_as_cifer?(number)
+      @word
     else
-      number
+      ''
     end
   end
 
   private
 
-  def is_dividable_through_3?(number)
-    number % 3 == 0
+  def is_dividable?(number)
+    number % @number == 0
   end
 
-  def is_dividable_through_5?(number)
-    number % 5 == 0
-  end
-
-  def has_3_as_cifer?(number)
-    number.to_s.chars.include?('3')
-  end
-
-  def has_5_as_cifer?(number)
-    number.to_s.chars.include?('5')
+  def has_as_cifer?(number)
+    number.to_s.chars.include?(@number.to_s)
   end
 end
