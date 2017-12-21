@@ -1,0 +1,6 @@
+#! /usr/bin/env ruby
+
+require 'ms_sample_gem'
+
+MsSampleGem.set_counter(fizz: 3, buzz: 5)
+MsSampleGem.count(100)
